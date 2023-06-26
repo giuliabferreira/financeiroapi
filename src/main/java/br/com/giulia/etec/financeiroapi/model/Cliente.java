@@ -1,6 +1,8 @@
 package br.com.giulia.etec.financeiroapi.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -9,15 +11,19 @@ public class Cliente {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long id;
+    private Integer id;
 
     private String nomecliente;
 
-    public Long getId() {
+    @OneToMany(mappedBy="cliente")
+    private List<ContasPagar> clienteContasPagar = new ArrayList<>();
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

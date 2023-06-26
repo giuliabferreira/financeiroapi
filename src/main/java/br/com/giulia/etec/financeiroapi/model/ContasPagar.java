@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name="contaspagas")
+@Table(name="contaspagar")
 public class ContasPagar {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +14,6 @@ public class ContasPagar {
     private Integer id;
 
     private Date data;
-
-    private Date dataVencimento;
 
     private BigDecimal valor;
 
@@ -37,14 +35,6 @@ public class ContasPagar {
 
     public void setData(Date data) {
         this.data = data;
-    }
-
-    public Date getDataVencimento() {
-        return dataVencimento;
-    }
-
-    public void setDataVencimento(Date dataVencimento) {
-        this.dataVencimento = dataVencimento;
     }
 
     public BigDecimal getValor() {
